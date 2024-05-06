@@ -11,9 +11,7 @@ import Loader from "./Loader";
 const JobList = () => {
   const { showBoundary } = useErrorBoundary();
   const jobs = useStoreSelector((state) => state.jobList.jobs);
-  const { 
-    error, isError, isLoading, 
-  } = useJobList();
+  const { hasMore, error, isError, isLoading, lastElementRef } = useJobList();
   if (isError) {
     showBoundary(error);
   }
@@ -26,8 +24,17 @@ const JobList = () => {
         </Typography>
       </Grid>
 
+          <Grid
+            item
+            md={4}
+            sm={6}
+            xs={12}
+            key={job.jdUid + index}
+            {...(isLastElement && { ref: lastElementRef })}
+          >
             <JobCard job={job} />
           </Grid>
+        );
         <Grid item xs={12}>
           <Typography align="center">
             No job matches your current filters. Try broadening your search criteria or using
