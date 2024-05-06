@@ -5,6 +5,7 @@ import { FormProvider, useForm } from "react-hook-form";
 import { z } from "zod";
 
 import Filters from "@components/filters/Filters";
+import JobList from "@components/JobList";
 
 const filterSchema = z.object({
   location: z.string(),
@@ -43,6 +44,7 @@ const App = () => {
 
       <FormProvider {...formMethods}>
         <Filters />
+        <JobList />
       </FormProvider>
     </Container>
   );
