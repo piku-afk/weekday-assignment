@@ -1,3 +1,5 @@
+import { FilterType } from "../App";
+
 export interface JobDescription {
   jdUid: string;
   jdLink: string;
@@ -13,3 +15,12 @@ export interface JobDescription {
   logoUrl: string;
 }
 
+export interface JobListResponse {
+  jdList: JobDescription[];
+  totalCount: number;
+}
+
+export interface JobListRequest extends Partial<FilterType> {
+  limit: number;
+  offset?: number;
+}
