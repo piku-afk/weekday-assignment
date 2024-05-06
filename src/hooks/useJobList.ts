@@ -1,5 +1,4 @@
-import debounce from "lodash.debounce";
-import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 
 import { useGetJobListMutation } from "@apis/jobList.api";
 
@@ -21,15 +20,13 @@ export const useJobList = () => {
   const { total } = meta;
   const hasMore = jobs.length < total;
 
-  const debouncedGetJobList = useMemo(() => debounce(getJobList, 500), [getJobList]);
-
   useEffect(() => {
-    debouncedGetJobList({ limit: LIMIT, offset });
+    const request = getJobList({ limit: LIMIT, offset });
 
     return () => {
-      debouncedGetJobList.cancel();
+      request.abort();
     };
-  }, [offset, debouncedGetJobList]);
+  }, [offset, getJobList]);
 
   useEffect(() => {
     if (!data) return;
