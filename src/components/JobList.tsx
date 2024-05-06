@@ -26,7 +26,8 @@ const JobList = () => {
         </Typography>
       </Grid>
 
-      {jobs.length === 0 && !isLoading && (
+            <JobCard job={job} />
+          </Grid>
         <Grid item xs={12}>
           <Typography align="center">
             No job matches your current filters. Try broadening your search criteria or using
