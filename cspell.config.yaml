@@ -6,6 +6,7 @@ words: []
 ignoreWords:
   - hookform
   - ianvs
+  - nvm
   - reduxjs
   - piyush
 import: []

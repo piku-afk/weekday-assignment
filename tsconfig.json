@@ -21,6 +21,7 @@
       "@hooks/*": ["src/hooks/*"],
       "@interfaces/*": ["src/interfaces/*"],
       "@slices/*": ["src/slices/*"],
+      "@utils/*": ["src/utils/*"]
     },
 
     /* Linting */
