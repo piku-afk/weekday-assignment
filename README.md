@@ -6,6 +6,8 @@ Welcome!
 
 This is the code assignment for WeekDay. Here, you'll find the necessary steps to set up your development environment, install dependencies, and run the application in both development and production modes.
 
+The deployed version of the application is available at: https://piku-weekday.netlify.app
+
 ## Setup
 
 1. Make sure you have cloned this repository locally on your machine.
