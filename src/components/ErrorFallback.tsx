@@ -2,6 +2,10 @@ import Button from "@mui/material/Button";
 import Container from "@mui/material/Container";
 import Typography from "@mui/material/Typography";
 
+/**
+ * This component is displayed when an error occurs within the React app and is caught by the ErrorBoundary component.
+ * It provides a fallback UI to the user.
+ */
 const ErrorFallback = () => {
   const handleRetry = () => {
     window.location.reload();

@@ -45,7 +45,7 @@ const JobCard = (params: JobCardProps) => {
           Min Experience: {job.minExp ?? 0} years
         </Typography>
         <Typography sx={{ fontSize: 14, lineHeight: "22px", mb: 2 }}>
-          Min Salary Range: {job.minJdSalary ?? 0}
+          Min Salary Range: {job.salaryCurrencyCode ?? "USD"} {job.minJdSalary ?? 0}k
         </Typography>
 
         <Typography

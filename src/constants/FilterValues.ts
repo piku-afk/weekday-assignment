@@ -1,3 +1,8 @@
+/**
+ * Placeholder data for filters. This file is currently used for development purposes with hardcoded data.
+ * In a production environment, filter data should be fetched from the backend API
+ */
+
 export const MinExperienceOptions = {
   "1 year": 1,
   "2 years": 2,

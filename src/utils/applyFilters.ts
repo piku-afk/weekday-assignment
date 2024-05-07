@@ -10,6 +10,11 @@ import {
 
 import { JobDescription } from "@interfaces/job.interface";
 
+/**
+ * Notes:
+ *
+ * - Using matchSorter to achieve expected and deterministic matching of results based on the search query
+ */
 export const applyFilters = (
   jobs: JobDescription[],
   filters: Partial<FilterType>,
@@ -52,7 +57,10 @@ export const applyFilters = (
       }
 
       case "techStack": {
-        // TODO: do not know which key to use for filters
+        /**
+         * TODO: Implement tech stack filtering logic
+         * Determine the appropriate field in the job data to use for filtering by techStack.
+         */
         break;
       }
 

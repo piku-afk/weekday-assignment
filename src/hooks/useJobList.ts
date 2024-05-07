@@ -6,7 +6,7 @@ import { setJobs, setMeta } from "@slices/jobList.slice";
 
 import { useStoreDispatch, useStoreSelector } from "./useStore";
 
-// number of jobs per page
+// Maximum number of jobs displayed per page
 const LIMIT = 30;
 
 export const useJobList = () => {
@@ -37,6 +37,9 @@ export const useJobList = () => {
     dispatch(setMeta({ total: totalCount }));
   }, [data, dispatch]);
 
+  /**
+   * Implements infinite scroll functionality for fetching new data when the user reaches the bottom of the list.
+   */
   const lastElementRef = useCallback(
     (node: HTMLDivElement | null) => {
       if (isLoading) return;
@@ -45,6 +48,10 @@ export const useJobList = () => {
         observer.current.disconnect();
       }
 
+      /**
+       * When the last element becomes visible and there's more data to be fetched,
+       * the function updates the `offset` state variable by adding the `LIMIT` to its current value
+       */
       observer.current = new IntersectionObserver((entries) => {
         if (entries[0].isIntersecting && hasMore) {
           setOffset((prev) => prev + LIMIT);
